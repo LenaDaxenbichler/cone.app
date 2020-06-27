@@ -994,7 +994,7 @@ class TestBrowserAuthoring(TileTestCase):
         self.assertTrue(res.find(expected) > -1)
         self.assertEqual(
             request.environ['cone.app.form.selector'],
-            '#ajax-overlay .overlay_content'
+            '#ajax-form .overlay_content'
         )
         self.assertEqual(request.environ['cone.app.form.mode'], 'inner')
 
@@ -1017,7 +1017,7 @@ class TestBrowserAuthoring(TileTestCase):
         self.assertTrue(res.text.find(expected) > -1)
         expected = (
             "parent.bdajax.render_ajax_form("
-            "child, '#ajax-overlay .overlay_content', 'inner', false);"
+            "child, '#ajax-form .overlay_content', 'inner', false);"
         )
         self.assertTrue(res.text.find(expected) > -1)
 
@@ -1036,7 +1036,7 @@ class TestBrowserAuthoring(TileTestCase):
         self.assertTrue(res.text.find(expected) > -1)
         expected = (
             "parent.bdajax.render_ajax_form("
-            "child, '#ajax-overlay .overlay_content', 'inner', ["
+            "child, '#ajax-form .overlay_content', 'inner', ["
         )
         self.assertTrue(res.text.find(expected) > -1)
         expected = '"close": true'
@@ -1101,7 +1101,7 @@ class TestBrowserAuthoring(TileTestCase):
         self.assertTrue(res.find(expected) > -1)
         self.assertEqual(
             request.environ['cone.app.form.selector'],
-            '#ajax-overlay .overlay_content'
+            '#ajax-form .overlay_content'
         )
         self.assertEqual(request.environ['cone.app.form.mode'], 'inner')
 
@@ -1126,7 +1126,7 @@ class TestBrowserAuthoring(TileTestCase):
         self.assertTrue(res.text.find(expected) > -1)
         expected = (
             "parent.bdajax.render_ajax_form("
-            "child, '#ajax-overlay .overlay_content', 'inner', false);"
+            "child, '#ajax-form .overlay_content', 'inner', false);"
         )
         self.assertTrue(res.text.find(expected) > -1)
         self.assertEqual(root.keys(), [])
@@ -1148,7 +1148,7 @@ class TestBrowserAuthoring(TileTestCase):
         self.assertTrue(res.text.find(expected) > -1)
         expected = (
             "parent.bdajax.render_ajax_form("
-            "child, '#ajax-overlay .overlay_content', 'inner', ["
+            "child, '#ajax-form .overlay_content', 'inner', ["
         )
         self.assertTrue(res.text.find(expected) > -1)
         expected = '"close": true'
@@ -1212,7 +1212,7 @@ class TestBrowserAuthoring(TileTestCase):
         self.assertTrue(res.find(expected) > -1)
         self.assertEqual(
             request.environ['cone.app.form.selector'],
-            '#ajax-overlay .overlay_content'
+            '#ajax-form .overlay_content'
         )
         self.assertEqual(request.environ['cone.app.form.mode'], 'inner')
 
@@ -1236,7 +1236,7 @@ class TestBrowserAuthoring(TileTestCase):
         self.assertTrue(res.text.find(expected) > -1)
         expected = (
             "parent.bdajax.render_ajax_form("
-            "child, '#ajax-overlay .overlay_content', 'inner', false);"
+            "child, '#ajax-form .overlay_content', 'inner', false);"
         )
         self.assertTrue(res.text.find(expected) > -1)
         self.assertEqual(model.attrs.title, 'My Title')
@@ -1257,7 +1257,7 @@ class TestBrowserAuthoring(TileTestCase):
         self.assertTrue(res.text.find(expected) > -1)
         expected = (
             "parent.bdajax.render_ajax_form("
-            "child, '#ajax-overlay .overlay_content', 'inner', ["
+            "child, '#ajax-form .overlay_content', 'inner', ["
         )
         self.assertTrue(res.text.find(expected) > -1)
         expected = '"close": true'

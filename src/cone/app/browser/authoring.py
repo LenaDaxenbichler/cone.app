@@ -241,15 +241,16 @@ class OverlayForm(Behavior):
     """Form behavior rendering to overlay.
     """
     action_resource = override('overlayform')
-    # XXX: change ``overlay_selector`` to #ajax-form
-    overlay_selector = override('#ajax-overlay')
+    overlay_selector = override('#ajax-form')
     overlay_content_selector = override('.overlay_content')
 
     @plumb
     def __call__(_next, self, model, request):
         form = _next(self, model, request)
-        selector = '%s %s' % (self.overlay_selector,
-                              self.overlay_content_selector)
+        selector = '%s %s' % (
+            self.overlay_selector,
+            self.overlay_content_selector
+        )
         ajax_form_fiddle(request, selector, 'inner')
         return form
 
